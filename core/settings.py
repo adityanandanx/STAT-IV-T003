@@ -18,10 +18,9 @@ DEFAULT_KEY_MAPPINGS = {
     # Action keys
     "punch": "a",  # Punch action
     "kick": "x",  # Kick action
-    "power_move": "z",  # Power move action
+    "kick2": "z",  # Power move action
     # Additional keys that might be useful
     "block": "s",  # Block action
-    "grab": "d",  # Grab/throw action
 }
 
 # Path to the key mappings configuration file

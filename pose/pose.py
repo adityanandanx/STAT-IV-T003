@@ -185,6 +185,10 @@ class PoseGestureController:
                 left_hand = landmarks[self.mp_pose.PoseLandmark.RIGHT_INDEX]
                 right_hand = landmarks[self.mp_pose.PoseLandmark.LEFT_INDEX]
 
+                # Get knee position
+                left_knee = landmarks[self.mp_pose.PoseLandmark.LEFT_KNEE]
+                right_knee = landmarks[self.mp_pose.PoseLandmark.RIGHT_KNEE]
+
                 # Update face position from nose landmark
                 nose = landmarks[self.mp_pose.PoseLandmark.NOSE]
                 self.face_position = (nose.x, nose.y)
@@ -207,6 +211,16 @@ class PoseGestureController:
                 ):
                     if now - self.last_action_time > self.cooldown:
                         self.trigger_action("block")
+                if point_in_trigger_zone(
+                    left_knee.x, left_knee.y, self.trigger_zone, self.face_position
+                ):
+                    if now - self.last_action_time > self.cooldown:
+                        self.trigger_action("kick2")
+                if point_in_trigger_zone(
+                    right_knee.x, right_knee.y, self.trigger_zone, self.face_position
+                ):
+                    if now - self.last_action_time > self.cooldown:
+                        self.trigger_action("kick")
 
             # Draw the trigger zone relative to face position
             draw_trigger_zone(frame, self.trigger_zone, self.face_position)

@@ -97,6 +97,14 @@ def draw_landmarks(frame, landmarks, mp_pose):
         cx, cy = int(nose.x * w), int(nose.y * h)
         cv2.circle(frame, (cx, cy), 10, (0, 255, 0), -1)
 
+        # Draw knees
+        left_knee = landmarks[mp_pose.PoseLandmark.LEFT_KNEE]
+        right_knee = landmarks[mp_pose.PoseLandmark.RIGHT_KNEE]
+        cx1, cy1 = int(left_knee.x * w), int(left_knee.y * h)
+        cx2, cy2 = int(right_knee.x * w), int(right_knee.y * h)
+        cv2.circle(frame, (cx1, cy1), 10, (0, 255, 0), -1)
+        cv2.circle(frame, (cx2, cy2), 10, (0, 255, 0), -1)
+
         # Draw shoulders
         left_shoulder = landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER]
         right_shoulder = landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER]
