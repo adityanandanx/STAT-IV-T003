@@ -251,7 +251,7 @@ class InputController:
         self.action_mapping = {
             0: KEY_MAPPINGS["punch"],  # punch
             1: KEY_MAPPINGS["kick"],  # kick
-            2: KEY_MAPPINGS["power_move"],  # power move
+            2: KEY_MAPPINGS["kick2"],  # power move
         }
 
     def execute_action(self, action_index):
