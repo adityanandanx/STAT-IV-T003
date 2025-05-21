@@ -41,8 +41,8 @@ Gesture-Gaming-Tekken is an innovative project that allows you to play Tekken (a
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/Gesture-Gaming-Tekken.git
-cd Gesture-Gaming-Tekken
+git clone https://github.com/adityanandanx/STAT-IV-T003
+cd STAT-IV-T003
 
 # Create and activate a virtual environment (recommended)
 python -m venv .venv
